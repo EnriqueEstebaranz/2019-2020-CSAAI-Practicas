@@ -1,0 +1,14 @@
+/* Ejemplo de hoja de estilo */
+
+/* Estilo para el cuerpo del HTML */
+body {
+  background-image: url("prueba.gif");
+  background-repeat: repeat-y;
+  background-size: cover;
+
+}
+
+/* Estilo para las etiquetas de tipo h1 */
+p {
+  color: blue;
+}
