@@ -19,7 +19,6 @@
             gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
         }
     </script>
-
     <script>
         var gl;
         var count = 0.0;
@@ -66,12 +65,13 @@
             gl.drawArrays(gl.TRIANGLES, 0, 6);
 
             // Call drawScene again in the next browser repaint
-            count += 100000.01;
+            count += 0.01;
+
             requestAnimationFrame(drawScene);
         }
 
         function initVertexBuffers(gl) {
-            // Triangle
+            // CUADRADO
             var vertices = [
                 -0.5, 0.5, 0, // Vertice #1
                 -0.5, -0.5, 0, // Vertice #2
@@ -124,7 +124,9 @@
 </head>
 
 <body onload="init()">
-    <canvas id="myCanvas" width="640" height="480"></canvas>
+ <canvas id="myCanvas" width="640" height="480"></canvas>
+ <br>
+ Step: <input type="text" value="0.01" id="step">
 </body>
 
 </html>
