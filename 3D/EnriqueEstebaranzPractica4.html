@@ -102,7 +102,7 @@
 
           var translated = mat4.fromTranslation(mat4.create(), [posicionEjeX, posicionEjeY, 0.0]); //Traslacion
           var scaled = mat4.fromScaling(mat4.create(), [escalado, escalado, 0.0]); //Escalado
-          var rotated = mat4.fromXRotation(mat4.create(), giroEjeZ); //Rotacion
+          var rotated = mat4.fromZRotation(mat4.create(), giroEjeZ); //Rotacion
 
           var matrix = mat4.multiply(mat4.create(), translated, scaled);
           var matrixb = mat4.multiply(mat4.create(), matrix, rotated);
