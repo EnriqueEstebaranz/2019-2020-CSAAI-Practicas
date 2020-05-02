@@ -21,12 +21,36 @@ hr{
   margin: 0px 0px;
 }
 
+.foto2{
+  width: 250px;
+  height: 170px;
+  padding-right: 27px;
+  padding-top: 43
+
+}
+
 .anuncio2{
   width: 250px;
   height: 550px;
   margin-left: : 10px;
   margin-top: 10px;
   position:absolute;
+}
+
+.informacionderecha{
+  background-color: rgb(255,255,255); opacity: 0.9;
+  width: 250px;
+  height: 420px;
+  margin-top: 43px;
+  color: black;
+  float:right;
+  border: black solid;
+  margin-right:  10px;
+  padding: 10px;
+}
+
+.redessociales{
+  height: 15px;
 }
 
 .informacion{
@@ -44,6 +68,13 @@ hr{
   font-size:200%;
   margin-left: 30px;
   margin-top: 30px;
+}
+
+.parrafo1{
+  font-family:courier,arial,helvética;
+  padding: 30px;
+  font-size: 20px;
+  line-height: 30px;
 }
 
 .botón{
