@@ -11,12 +11,52 @@
 
 }
 .foto1{
-  float: left;
   width: 200px;
   height: 150px;
-  border: 4px solid black;
-  margin: 10px 40px;
+  border: 4px solid white;
+  margin: 10px 10px;
 }
+
+.anuncio1{
+  width: 250px;
+  height: 550px;
+
+  margin-left: : 10px;
+  margin-top: 10px;
+  position:absolute;
+}
+
+h1 {
+
+  font-family:courier,arial,helvética;
+  font-size: 90px;
+  margin-left: 280px;
+  margin-top: 10px;
+  padding:1px;
+  position:absolute;
+}
+
+hr {
+  background-color: orange;
+  height: 2px;
+  margin-top: 340;
+  margin-right: 0;
+  margin-left: 280px;
+  margin-left: 280px;
+  position:absolute;
+}
+
+
+.informacion{
+  background-color: white;
+  margin-left: 280px;
+  margin-top: 220px;
+  margin-right: 0;
+  border: double;
+  position:absolute;
+
+}
+
 /* Estilo para el cuerpo del HTML */
 body {
   background-image: url("prueba.gif");
