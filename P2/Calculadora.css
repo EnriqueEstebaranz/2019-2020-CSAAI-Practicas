@@ -1,0 +1,119 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  font-family:courier,arial,helvética;
+}
+
+.titulo {
+
+  margin-left: 450px;
+  margin-right: 10px;
+  padding: 100px;
+  color:white;
+  text-align: left;
+  font-size: 250px;
+  font-family:"Courier New";
+  position:absolute;
+  margin-right:  10px;
+
+}
+
+.gif1{
+  width: 550px;
+  height: 450px;
+  margin-left: : 10px;
+  margin-top: 10px;
+  position:absolute;
+}
+.pantalla {
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 669px;
+  font-size: 2.3rem;
+  box-shadow: 0 0 0pt 2pt #444444;
+  height: 300px;
+  background-color: #0E0E0E;
+  border-radius: 10px;
+  color: #555;
+  text-align: left;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.calculadora{
+  text-align: left;
+  background-color: #43437D;
+  margin-top: 450px;
+  right: 50%;
+  transform: translate(+50%);
+  width: 689px;
+  height: 890px;
+  position: absolute;
+  border: black solid;
+  border-radius: 10px 10px 30px 30px;
+}
+
+.ladoizq{
+  text-align: left;
+  margin-left: 10px;
+
+  font-size: 30px;
+  font-family: "Impact";
+  text:italic;
+  color:#8a9597;
+}
+.ladoder{
+  text-align: right;
+  margin-right: 10px;
+  font-size: 30px;
+  color:#8a9597;
+}
+
+button{
+  text-align: center;
+  width: 100px;
+  height: 75px;
+  margin: 15px;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  border-radius: 20px;
+  box-shadow: 12px;
+
+}
+button:hover {
+  box-shadow: 0px 0px 21px white;
+}
+
+button:active{
+  background-color: #7800F0;
+  box-shadow: 0 0 21px black;
+  transform: translateY(4px);
+}
+
+
+
+.teclas {
+  margin-top: 60px;
+}
+
+.numeros {
+  background-color: #C2DEE2;
+  border-color: #C2DEE2;
+}
+
+.funcionalidad{
+  background-color: #7E7E7E;
+  border-color: #7E7E7E;
+}
+
+.ejecutar{
+  background-color: #6325F2;
+  border-color: #6325F2;
+}
+body {
+  background-image: url("fondo2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
