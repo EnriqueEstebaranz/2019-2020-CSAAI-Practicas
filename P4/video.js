@@ -75,7 +75,7 @@ play3.onclick = () => {
 test.onclick = () => {
   console.log("Ha clickado en TEST");
   video_selecionado.src = false; //para evitar solpara la imagen de test con video
-  video_selecionado.poster = "https://i.ytimg.com/vi/rGkQDrUcX18/maxresdefault.jpg"
+  video_selecionado.poster = "https://mmedia.uv.es/display?c=asamar4&name=enpruebas.jpg&path=/"
   video1.style.border = "0px";
   video2.style.border = "0px";
   video3.style.border = "0px";
@@ -84,13 +84,34 @@ test.onclick = () => {
 
 aleatorio.onclick = () => {
   console.log("Ha clickado en RANDOM");
-  return (Math.random() * (3));
-  console.log("return");
-  if (Math.random() * 3 == 0){
-    play1.onclick = true;
-  }else if (Math.random() * 3 == 1){
-    play2.onclick = true;
+  var videos = [1,2,3];
+  var i = Math.floor(Math.random() * videos.length);
+  console.log(i)
+  if(i == 0){
+    video_selecionado.poster = false; //para evitar solpara la imagen de test con video
+    video_selecionado.src = video1.src;
+    video_selecionado.muted = false;
+    video1.style.border = "5px #FD00C6 solid";
+    video2.style.border = "0px";
+    video3.style.border = "0px";
+    test.style.border = "0px";
+  }else if(i == 1){
+    console.log("Ha clickado en play2")
+    video_selecionado.poster = false; //para evitar solpara la imagen de test con video
+    video_selecionado.src = video2.src;
+    video_selecionado.muted = false;
+    video1.style.border = "0px";
+    video2.style.border = "5px #FD00C6 solid";
+    video3.style.border = "0px";
+    test.style.border = "0px";
   }else{
-    play3.onclick = true;
+    console.log("Ha clickado en play3")
+    video_selecionado.poster = false; //para evitar solpara la imagen de test con video
+    video_selecionado.src = video3.src;
+    video_selecionado.muted = false;
+    video1.style.border = "0px";
+    video2.style.border = "0px";
+    video3.style.border = "5px #FD00C6 solid";
+    test.style.border = "0px";
   }
 }

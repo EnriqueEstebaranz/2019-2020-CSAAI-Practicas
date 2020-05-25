@@ -12,6 +12,16 @@ button{
   border: #BA068E solid;
   color: #E603AE;
 }
+button:hover {
+  box-shadow: 0px 0px 21px #FD7FE2;
+}
+
+button:active{
+  background-color: #FD7FE2;
+  box-shadow: 0 0 21px #FD7FE2;
+  transform: translateY(4px);
+}
+
 .todo{
   background-color: #68365D;
   width: 600px;
