@@ -1,0 +1,39 @@
+button{
+  text-align: center;
+  width: 150px;
+  height: 75px;
+  margin: 22px;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  border-radius: 20px;
+  box-shadow: 12px;
+  background-color: #4E053C;
+  border: #BA068E solid;
+  color: #E603AE;
+}
+.todo{
+    background-color: #68365D;
+    width: 600px;
+    margin: 0 auto;
+    padding-top: 0.1px;
+    padding-bottom: 20px;
+    border: #BA068E solid;
+    border-radius: 50PX 50PX 50PX 50PX;
+}
+
+#video_selecionado{
+  padding: 0;
+  margin: 39px;
+}
+
+video{
+  margin: 5.5px;
+  border: #BA068E solid;
+}
+
+body {
+  background-image: url("fondo.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
