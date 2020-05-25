@@ -41,6 +41,7 @@ play3 = document.getElementById('play3')
 play1.onclick = () => {
   console.log("Ha clickado en play1")
   video_selecionado.src = video1.src;
+  video_selecionado.muted = false;
   video1.style.border = "5px #FD00C6 solid";
   video2.style.border = "0px";
   video3.style.border = "0px";
@@ -48,6 +49,7 @@ play1.onclick = () => {
 play2.onclick = () => {
   console.log("Ha clickado en play1")
   video_selecionado.src = video2.src;
+  video_selecionado.muted = false;
   video1.style.border = "0px";
   video2.style.border = "5px #FD00C6 solid";
   video3.style.border = "0px";
@@ -56,6 +58,7 @@ play2.onclick = () => {
 play3.onclick = () => {
   console.log("Ha clickado en play1")
   video_selecionado.src = video3.src;
+  video_selecionado.muted = false;
   video1.style.border = "0px";
   video2.style.border = "0px";
   video3.style.border = "5px #FD00C6 solid";
