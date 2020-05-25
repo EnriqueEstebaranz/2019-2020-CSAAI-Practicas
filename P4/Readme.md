@@ -1,6 +1,6 @@
 # Práctica 4
 
-file:///C:/Users/enriq/Documents/GitHub/2019-2020-CSAAI-Practicas/P4/video.html
+https://enriqueestebaranz.github.io/2019-2020-CSAAI-Practicas/P4/video.html
 
 Realiza todo lo basico y como mejora he implementado :
 
