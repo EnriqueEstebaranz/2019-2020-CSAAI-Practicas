@@ -33,33 +33,64 @@ video3.height=90;
 //-- Imagen estática a mostrar cuando el video no
 //-- ha arrancado
 video3.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4";
-//--botones play (1, 2, 3)
-play1 = document.getElementById('play1')
-play2 = document.getElementById('play2')
-play3 = document.getElementById('play3')
+//--botones play (1, 2, 3) y (TEST ,RANDOM)
+play1 = document.getElementById("play1")
+play2 = document.getElementById("play2")
+play3 = document.getElementById("play3")
+test = document.getElementById("test")
+aleatorio = document.getElementById("aleatorio")
 
 play1.onclick = () => {
   console.log("Ha clickado en play1")
+  video_selecionado.poster = false; //para evitar solpara la imagen de test con video
   video_selecionado.src = video1.src;
   video_selecionado.muted = false;
   video1.style.border = "5px #FD00C6 solid";
   video2.style.border = "0px";
   video3.style.border = "0px";
+  test.style.border = "0px";
 }
 play2.onclick = () => {
-  console.log("Ha clickado en play1")
+  console.log("Ha clickado en play2")
+  video_selecionado.poster = false; //para evitar solpara la imagen de test con video
   video_selecionado.src = video2.src;
   video_selecionado.muted = false;
   video1.style.border = "0px";
   video2.style.border = "5px #FD00C6 solid";
   video3.style.border = "0px";
+  test.style.border = "0px";
 }
 
 play3.onclick = () => {
-  console.log("Ha clickado en play1")
+  console.log("Ha clickado en play3")
+  video_selecionado.poster = false; //para evitar solpara la imagen de test con video
   video_selecionado.src = video3.src;
   video_selecionado.muted = false;
   video1.style.border = "0px";
   video2.style.border = "0px";
   video3.style.border = "5px #FD00C6 solid";
+  test.style.border = "0px";
+}
+
+test.onclick = () => {
+  console.log("Ha clickado en TEST");
+  video_selecionado.src = false; //para evitar solpara la imagen de test con video
+  video_selecionado.poster = "https://i.ytimg.com/vi/rGkQDrUcX18/maxresdefault.jpg"
+  video1.style.border = "0px";
+  video2.style.border = "0px";
+  video3.style.border = "0px";
+  test.style.border = "5px #FD00C6 solid";
+}
+
+aleatorio.onclick = () => {
+  console.log("Ha clickado en RANDOM");
+  return (Math.random() * (3));
+  console.log("return");
+  if (Math.random() * 3 == 0){
+    play1.onclick = true;
+  }else if (Math.random() * 3 == 1){
+    play2.onclick = true;
+  }else{
+    play3.onclick = true;
+  }
 }

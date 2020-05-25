@@ -1,8 +1,8 @@
 button{
   text-align: center;
-  width: 150px;
+  width: 155px;
   height: 75px;
-  margin: 22px;
+  margin: 20px;
   padding: 10px;
   font-size: 30px;
   font-weight: 700;
@@ -13,13 +13,17 @@ button{
   color: #E603AE;
 }
 .todo{
-    background-color: #68365D;
-    width: 600px;
-    margin: 0 auto;
-    padding-top: 0.1px;
-    padding-bottom: 20px;
-    border: #BA068E solid;
-    border-radius: 50PX 50PX 50PX 50PX;
+  background-color: #68365D;
+  width: 600px;
+  margin: 0 auto;
+  padding-top: 0.1px;
+  padding-bottom: 20px;
+  border: #BA068E solid;
+  border-radius: 50PX 50PX 50PX 50PX;
+}
+
+#test {
+  border:0px;
 }
 
 #video_selecionado{
