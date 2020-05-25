@@ -33,3 +33,30 @@ video3.height=90;
 //-- Imagen estática a mostrar cuando el video no
 //-- ha arrancado
 video3.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4";
+//--botones play (1, 2, 3)
+play1 = document.getElementById('play1')
+play2 = document.getElementById('play2')
+play3 = document.getElementById('play3')
+
+play1.onclick = () => {
+  console.log("Ha clickado en play1")
+  video_selecionado.src = video1.src;
+  video1.style.border = "5px #FD00C6 solid";
+  video2.style.border = "0px";
+  video3.style.border = "0px";
+}
+play2.onclick = () => {
+  console.log("Ha clickado en play1")
+  video_selecionado.src = video2.src;
+  video1.style.border = "0px";
+  video2.style.border = "5px #FD00C6 solid";
+  video3.style.border = "0px";
+}
+
+play3.onclick = () => {
+  console.log("Ha clickado en play1")
+  video_selecionado.src = video3.src;
+  video1.style.border = "0px";
+  video2.style.border = "0px";
+  video3.style.border = "5px #FD00C6 solid";
+}
