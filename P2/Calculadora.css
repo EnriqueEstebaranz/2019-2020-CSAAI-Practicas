@@ -1,4 +1,4 @@
-*{
+  *{
   padding: 0px;
   margin: 0px;
   font-family:courier,arial,helvética;
@@ -25,21 +25,30 @@
   margin-top: 10px;
   position:absolute;
 }
+
 .pantalla {
   margin-right: 10px;
   margin-left: 10px;
   margin-top: 10px;
   width: 669px;
-  font-size: 2.3rem;
+  font-size: 20px;
   box-shadow: 0 0 0pt 2pt #444444;
   height: 300px;
-  background-color: #0E0E0E;
+  background-color: black;
   border-radius: 10px;
-  color: #555;
+  color:white;
   text-align: left;
   display: block;
+  font-family: "VERDANA";
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.historial {
+
+  text-align: left;
+  font-size: 40px
+
 }
 .calculadora{
   text-align: left;
@@ -87,7 +96,7 @@ button:hover {
 }
 
 button:active{
-  background-color: #7800F0;
+  background-color: #969693;
   box-shadow: 0 0 21px black;
   transform: translateY(4px);
 }

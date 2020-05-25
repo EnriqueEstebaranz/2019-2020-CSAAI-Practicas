@@ -32,7 +32,6 @@ console.log("Ejecutando JS...");
   /* Simbolo igual de la Calculadora*/
   const igual = document.getElementById('igual');
 
-
   suma.onclick = function () {botones("+")};
   resta.onclick = function () {botones("-")};
   multiplicacion.onclick = function () {botones("*")};
@@ -55,23 +54,23 @@ console.log("Ejecutando JS...");
 let listA = [];
 let operacion = "";
 let solucion = 0;
-var numerosporlinea = 18;
+var numerosporlinea = 28;
 var n = 0;
 const maxlineashistorial = 3;
+
 /*Pulsando el boton clear limpia toda la pantalla y la restablece al valor de inicio*/
 clear.onclick = (ev) =>{
   listA = [];
   listA.push(0);
   operacion = "0";
   solucion = "";
-
   calculo.innerHTML = "0";
   historial.innerHTML = "";
 }
-
+/*Introduce el ultimo resultado obtenido*/
 function anterioresultado(){
 
-  ultimasolucion = solucion.toString().replace(/,/g, "");
+  ultimasolucion = solucion.toString().replace(/,/g, "");//solucionamos el problema al escribir desde el array
     if((solucion.length + listA.length) > numerosporlinea){ //Basicamente evitamos que se escriba mas de la cuenta.
       return;
     }
@@ -81,11 +80,11 @@ function anterioresultado(){
   listA = listA.concat(ultimasolucion);//Introducimos el anterior valor al array mediante concat
   calculo.innerHTML = listA;
 }
-
+/*Elimina el digito mas reciente*/
 eliminar.onclick = (ev)=>{
   listA.pop(); //Elimina el ultimo digito implementado al array.
   if (listA.length == 0) listA.push(0);
-  calculo.innerHTML = ((listA.toString()).replace(/,/g, ""));
+  calculo.innerHTML = ((listA.toString()).replace(/,/g, ""));//solucionamos el problema al escribir desde el array
 }
 /*Escribe los botones*/
 function botones(boton){
@@ -94,7 +93,9 @@ function botones(boton){
     listA.push(boton);
     calculo.innerHTML = listA;
   }else {
-    if (listA.length == numerosporlinea) //memoria de 30 caracteres.
+    if (listA.length == numerosporlinea) //memoria de 18 caracteres ,
+                                        //podemos cambiarla poniendo en csss
+                                        //un tamaño inferior.
       return;
     else {
       listA.push(boton);
@@ -102,16 +103,11 @@ function botones(boton){
     }
   }
 }
-
-
-
+/*Calculamos la operacion y la almecenamos en un historial de 4 operaciones*/
 igual.onclick = (ev) =>{
-
   var cadena = [];
-
   operacion = listA.toString().replace(/,/g, "");
-  solucion = Number((eval(operacion)).toFixed(3))
-
+  solucion = Number((eval(operacion)).toFixed(3))// nos permite resultado de hasta 3 digitos
   if(n < maxlineashistorial){
     historial.innerHTML += operacion + " = " + solucion + "<br>";
     listA[n] = operacion + " = " + solucion + "<br>";
@@ -129,9 +125,8 @@ igual.onclick = (ev) =>{
       historial.innerHTML += listA[i]
     }
   }
-  console.log(solucion);//log en consola
   listA = [];
   listA.push(0);
-  calculo.innerHTML = 0;
+  calculo.innerHTML = 0; //reestablecemos la pantalla y su valor
   operacion = solucion;
 }

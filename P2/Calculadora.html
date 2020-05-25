@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <title>Calculadora Simple</title>
     <link rel="stylesheet" type="text/css" href="Calculadora.css">
-    <script type="text/javascript" src =Calculadora.js>
-    </script>
+    <script  src ="calculadora.js" defer></script>
   </head>
   <body>
     <div>
       <img class= "gif1" src="calcu.gif" alt="Gif gracioso">
     </div>
     <div class="titulo">
-      <b>Calculito</b>span
+      <b>Calculito</b>
+
     </div>
     <div class="calculadora">
       <div class="casio">
@@ -24,15 +24,19 @@
         </div>
       </div>
     	<div class="pantalla">
-    		<div id="resultado"></div>
-        <div id="calculo"></div>
+        <div >
+          <h1 id ="historial"></h1>
+        </div>
+        <div >
+          <h1 id ="calculo"> 0</h1>
+        </div>
     	</div>
       <div class="teclas">
         <div>
           <button type="button" id="num7" value="7 " class="numeros"> 7 </button>
           <button type="button" id="num8" value="8" class="numeros"> 8 </button>
           <button type="button" id="num9" value="9" class="numeros"> 9 </button>
-          <button type="button" id="delete" value="" class="funcionalidad" >DEL</button>
+          <button type="button" id="eliminar" value="" class="funcionalidad" >DEL</button>
           <button type="button" id="clear" value="" class="funcionalidad">CLR</button>
         </div>
         <div>
