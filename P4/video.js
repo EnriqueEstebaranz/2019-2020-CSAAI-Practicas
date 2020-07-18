@@ -40,10 +40,7 @@ play3 = document.getElementById("play3")
 test = document.getElementById("test")
 aleatorio = document.getElementById("aleatorio")
 automatico = document.getElementById("automatico")
-
-video1.style.border = "0px"
-video2.style.border = "0px"
-video3.style.border = "0px"
+automaticooff = document.getElementById("automaticoOff")
 
 
 play1.onclick = () => {
@@ -147,6 +144,10 @@ function autoplay (){
 
 automatico.onclick = () => {
   automatico = setInterval(autoplay, 3000);
+}
+
+automaticooff.onclick = () => {
+  clearTimeout(automatico);
 }
 
 video_selecionado.addEventListener("timeupdate",function(ev){
