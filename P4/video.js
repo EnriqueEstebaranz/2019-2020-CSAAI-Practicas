@@ -44,6 +44,7 @@ play1.onclick = () => {
   console.log("Ha clickado en play1")
   video_selecionado.poster = false; //para evitar solpara la imagen de test con video
   video_selecionado.src = video1.src;
+  video_selecionado.currentTime = video1.currentTime;
   video_selecionado.muted = false;
   video1.style.border = "5px #FD00C6 solid";
   video2.style.border = "0px";
@@ -54,6 +55,7 @@ play2.onclick = () => {
   console.log("Ha clickado en play2")
   video_selecionado.poster = false; //para evitar solpara la imagen de test con video
   video_selecionado.src = video2.src;
+  video_selecionado.currentTime = video2.currentTime;
   video_selecionado.muted = false;
   video1.style.border = "0px";
   video2.style.border = "5px #FD00C6 solid";
@@ -65,6 +67,7 @@ play3.onclick = () => {
   console.log("Ha clickado en play3")
   video_selecionado.poster = false; //para evitar solpara la imagen de test con video
   video_selecionado.src = video3.src;
+  video_selecionado.currentTime = video3.currentTime;
   video_selecionado.muted = false;
   video1.style.border = "0px";
   video2.style.border = "0px";
@@ -90,6 +93,7 @@ aleatorio.onclick = () => {
   if(i == 0){
     video_selecionado.poster = false; //para evitar solpara la imagen de test con video
     video_selecionado.src = video1.src;
+    video_selecionado.currentTime = video1.currentTime;
     video_selecionado.muted = false;
     video1.style.border = "5px #FD00C6 solid";
     video2.style.border = "0px";
@@ -99,6 +103,7 @@ aleatorio.onclick = () => {
     console.log("Ha clickado en play2")
     video_selecionado.poster = false; //para evitar solpara la imagen de test con video
     video_selecionado.src = video2.src;
+    video_selecionado.currentTime = video2.currentTime;
     video_selecionado.muted = false;
     video1.style.border = "0px";
     video2.style.border = "5px #FD00C6 solid";
@@ -108,6 +113,7 @@ aleatorio.onclick = () => {
     console.log("Ha clickado en play3")
     video_selecionado.poster = false; //para evitar solpara la imagen de test con video
     video_selecionado.src = video3.src;
+    video_selecionado.currentTime = video3.currentTime;
     video_selecionado.muted = false;
     video1.style.border = "0px";
     video2.style.border = "0px";
@@ -115,3 +121,8 @@ aleatorio.onclick = () => {
     test.style.border = "0px";
   }
 }
+
+video_selecionado.addEventListener("timeupdate",function(ev){
+      var tiempo  = (video_selecionado.currentTime);
+      console.log(tiempo);
+  },true);
