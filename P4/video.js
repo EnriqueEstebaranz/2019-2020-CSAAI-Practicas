@@ -41,6 +41,11 @@ test = document.getElementById("test")
 aleatorio = document.getElementById("aleatorio")
 automatico = document.getElementById("automatico")
 
+video1.style.border = "0px"
+video2.style.border = "0px"
+video3.style.border = "0px"
+
+
 play1.onclick = () => {
   console.log("Ha clickado en play1")
   video_selecionado.poster = false; //para evitar solpara la imagen de test con video
@@ -123,96 +128,25 @@ aleatorio.onclick = () => {
   }
 }
 
-automatico.onclick = () => {
-  var duración = 3;
-  var automatico = "";
-  var on = 1;
-  automatico = Math.trunc(video_selecionado.currentTime);
+function autoplay (){
 
-  while (on == 1) {
-    if(video1.style.border = "5px #FD00C6 solid"){
-      automatico = Math.trunc(video_selecionado.currentTime);
-      while(video_selecionado.currentTime < (automatico + duración)){
-        video_selecionado.poster = false; //para evitar solpara la imagen de test con video
-        video_selecionado.src = video1.src;
-        video_selecionado.currentTime = video1.currentTime;
-        video_selecionado.muted = false;
-        video1.style.border = "5px #FD00C6 solid";
-        video2.style.border = "0px";
-        video3.style.border = "0px";
-        test.style.border = "0px";
-      }
-      video_selecionado.poster = false; //para evitar solpara la imagen de test con video
-      video_selecionado.src = video2.src;
-      video_selecionado.currentTime = video2.currentTime;
-      video_selecionado.muted = false;
-      video2.style.border = "5px #FD00C6 solid";
-      video3.style.border = "0px";
-      test.style.border = "0px";
-      video1.style.border = "0px";
-    }else if (video2.style.border = "5px #FD00C6 solid") {
-      automatico = Math.trunc(video_selecionado.currentTime);
-      while(video_selecionado.currentTime < (automatico + duración)){
-        video_selecionado.poster = false; //para evitar solpara la imagen de test con video
-        video_selecionado.src = video2.src;
-        video_selecionado.currentTime = video2.currentTime;
-        video_selecionado.muted = false;
-        video2.style.border = "5px #FD00C6 solid";
-        video3.style.border = "0px";
-        test.style.border = "0px";
-        video1.style.border = "0px";
-      }
-      video_selecionado.poster = false; //para evitar solpara la imagen de test con video
-      video_selecionado.src = video3.src;
-      video_selecionado.currentTime = video3.currentTime;
-      video_selecionado.muted = false;
-      video1.style.border = "0px";
-      video3.style.border = "5px #FD00C6 solid";
-      test.style.border = "0px";
-      video2.style.border = "0px";
-    }else if(video3.style.border = "5px #FD00C6 solid"){
-      automatico = Math.trunc(video_selecionado.currentTime);
-      while(video_selecionado.currentTime < (automatico + duración)){
-        video_selecionado.poster = false; //para evitar solpara la imagen de test con video
-        video_selecionado.src = video3.src;
-        video_selecionado.currentTime = video3.currentTime;
-        video_selecionado.muted = false;
-        video1.style.border = "0px";
-        video3.style.border = "5px #FD00C6 solid";
-        test.style.border = "0px";
-        video2.style.border = "0px"
-      }
-      video_selecionado.poster = false; //para evitar solpara la imagen de test con video
-      video_selecionado.src = video1.src;
-      video_selecionado.currentTime = video1.currentTime;
-      video_selecionado.muted = false;
-      video1.style.border = "5px #FD00C6 solid";
-      video2.style.border = "0px";
-      test.style.border = "0px";
-      video3.style.border = "0px";
-    }else{
-      console.log("Al no seleccionar una pantalla previamente inicias por la primera pantalla");
-      automatico = Math.trunc(video_selecionado.currentTime);
-      while(video_selecionado.currentTime < (automatico + duración)){
-        video_selecionado.poster = false; //para evitar solpara la imagen de test con video
-        video_selecionado.src = video1.src;
-        video_selecionado.currentTime = video1.currentTime;
-        video_selecionado.muted = false;
-        video1.style.border = "5px #FD00C6 solid";
-        video2.style.border = "0px";
-        video3.style.border = "0px";
-        test.style.border = "0px";
-      }
-      video_selecionado.poster = false; //para evitar solpara la imagen de test con video
-      video_selecionado.src = video2.src;
-      video_selecionado.currentTime = video2.currentTime;
-      video_selecionado.muted = false;
-      video2.style.border = "5px #FD00C6 solid";
-      video3.style.border = "0px";
-      test.style.border = "0px";
-      video1.style.border = "0px";
-    }
+  if (video_selecionado.src == video1.src) {
+    play2.click();
+    console.log("primero");
+  }else if (video_selecionado.src == video2.src) {
+    play3.click();
+    console.log("segundo");
+  }else if (video_selecionado.src == video3.src) {
+    play1.click();
+    console.log("tercer0");
+  }else{
+    console.log("Al no tener ningun video seleccionado , comienzas el modo automatico con el video1")
+    play1.click();
   }
+}
+
+automatico.onclick = () => {
+  automatico = setInterval(autoplay, 3000);
 }
 
 video_selecionado.addEventListener("timeupdate",function(ev){
