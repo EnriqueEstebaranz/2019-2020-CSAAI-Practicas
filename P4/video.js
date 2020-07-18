@@ -41,7 +41,7 @@ test = document.getElementById("test")
 aleatorio = document.getElementById("aleatorio")
 automatico = document.getElementById("automatico")
 automaticooff = document.getElementById("automaticoOff")
-
+segundos = document.getElementById('segundos');
 
 play1.onclick = () => {
   console.log("Ha clickado en play1")
@@ -152,5 +152,6 @@ automaticooff.onclick = () => {
 
 video_selecionado.addEventListener("timeupdate",function(ev){
       var tiempo  = (video_selecionado.currentTime);
-      console.log(tiempo);
+      var tiempoSegundos = Math.trunc(tiempo);
+      segundos.innerHTML = tiempoSegundos;
   },true);

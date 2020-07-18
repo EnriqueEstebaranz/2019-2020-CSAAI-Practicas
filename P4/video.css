@@ -41,6 +41,26 @@ button:active{
   margin: 39px;
 }
 
+#time{
+  text-align: center;
+  width: 155px;
+  height: 75px;
+  margin: 20px;
+  padding: 10px;
+  font-size: 30px;
+  color: #E603AE;
+}
+
+#segundos{
+  text-align: center;
+  width: 155px;
+  height: 75px;
+  margin: 20px;
+  padding: 10px;
+  font-size: 30px;
+  color: #E603AE;
+}
+
 video{
   margin: 14.5px;
 }
