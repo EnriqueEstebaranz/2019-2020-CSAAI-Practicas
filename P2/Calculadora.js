@@ -85,25 +85,26 @@ clear.onclick = (ev) =>{
 /*Escribe los botones*/
 function botones(boton){
   // function sacada de las guias
-  if (listA.length == numerosporlinea){
-    return;
-  }else {
-    for (i=0; i<numeros.length; i++) {
-      numeros[i].onclick = (ev) => {
+  for (i=0; i<numeros.length; i++) {
+    numeros[i].onclick = (ev) => {
+      if ((calculo.innerHTML.length) >= numerosporlinea) {
+        return;
+      }else{
         number(ev.target.value);
       }
     }
   }
-  if (listA.length == numerosporlinea){
-    return;
-  }else {
-    for (i=0; i<operadores.length; i++) {
-      operadores[i].onclick = (ev) => {
-        simbolos(ev.target.value);
+  for (i=0; i<operadores.length; i++) {
+    operadores[i].onclick = (ev) => {
+      if ((calculo.innerHTML.length) >= numerosporlinea) {
+        return;
+      }else{
+        operaciones(ev.target.value);
       }
     }
   }
 }
+
 
 
 //-- Ha llegado un dígito
@@ -126,7 +127,7 @@ function number(num)
   }
 }
 
-function simbolos(oper){
+function operaciones(oper){
   if (listA!= LISTA.OPERATION) {
     calculo.innerHTML += oper;
     listA= LISTA.OPERATION;
