@@ -56,13 +56,14 @@ console.log("Ejecutando JS...");
   answer.onclick = function () {anterioresultado()}
 
 /*Instrucciones*/
+var miArray = new Array();
 let numeros = document.getElementsByClassName("numeros");
 let operadores = document.getElementsByClassName("operadores");
 let operacion = "";
 let solucion = 0;
 var numerosporlinea = 28;
 var n = 0;
-const maxlineashistorial = 4;
+const maxlineashistorial = 5;
 var LISTA= {
   INIT: 0,
   OP1: 1,
@@ -165,27 +166,39 @@ eliminar.onclick = (ev)=>{
 
 /*Calculamos la operacion y la almecenamos en un historial de 4 operaciones*/
 igual.onclick = (ev) =>{
-  var cadena = [];
+
   operacion = calculo.innerHTML;
   solucion = Number((eval(operacion)).toFixed(3))// nos permite resultado de hasta 3 digitos
   if(n < maxlineashistorial){
-    historial.innerHTML += operacion + " = " + solucion + "<br>";
-    cadena[n] = operacion + " = " + solucion + "<br>";
-    console.log(listA[n])
+    if( n == 0){
+      historial.innerHTML += operacion + " = " + solucion + "<br>";
+      miArray[0] = operacion + " = " + solucion;
+    }else if( n == 1 ){
+      historial.innerHTML += operacion + " = " + solucion + "<br>";
+      miArray[1] = operacion + " = " + solucion;
+    }else if( n == 2 ){
+      historial.innerHTML += operacion + " = " + solucion + "<br>";
+      miArray[2] = operacion + " = " + solucion;
+    }else if( n == 3 ){
+      historial.innerHTML += operacion + " = " + solucion + "<br>";
+      miArray[3] = operacion + " = " + solucion;
+    }else if ( n == 4 ){
+      historial.innerHTML += operacion + " = " + solucion + "<br>";
+      miArray[4] = operacion + " = " + solucion;
+    }
     n = n + 1;
+
   }else{
-    for(i = 0; i < maxlineashistorial; i++){
-      cadena[i] = listA[i];
-    }
-    for (i = 0; i < maxlineashistorial-1; i++){
-      listA[i] = cadena[1 + i];
-    }
-    listA[maxlineashistorial - 1] = operacion  + " = " + solucion + "<br>";
-    historial.innerHTML = [];
-    for (i = 0; i < maxlineashistorial; i++){
-      historial.innerHTML += listA[i]
-    }
+    historial.innerHTML = "";
+    miArray[0] = miArray[1];
+    miArray[1] = miArray[2];
+    miArray[2] = miArray[3];
+    miArray[3] = miArray[4];
+    miArray[4] = operacion + " = " + solucion;
+    historial.innerHTML = miArray[0] + "<br>" + miArray[1] + "<br>" + miArray[2] + "<br>" + miArray[3] + "<br>";
+    historial.innerHTML += operacion + " = " + solucion + "<br>";
   }
+
   calculo.innerHTML = ""; //reestablecemos la pantalla y su valor
   operacion = solucion;
 }
