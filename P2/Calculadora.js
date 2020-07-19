@@ -56,7 +56,8 @@ console.log("Ejecutando JS...");
   answer.onclick = function () {anterioresultado()}
 
 /*Instrucciones*/
-
+let numeros = document.getElementsByClassName("numeros");
+let operadores = document.getElementsByClassName("operadores");
 let operacion = "";
 let solucion = 0;
 var numerosporlinea = 28;
@@ -81,29 +82,53 @@ clear.onclick = (ev) =>{
   historial.innerHTML = "";
 }
 
+/*Escribe los botones*/
+function botones(boton){
+  // function sacada de las guias
+  if (listA.length == numerosporlinea){
+    return;
+  }else {
+    for (i=0; i<numeros.length; i++) {
+      numeros[i].onclick = (ev) => {
+        number(ev.target.value);
+      }
+    }
+  }
+  if (listA.length == numerosporlinea){
+    return;
+  }else {
+    for (i=0; i<operadores.length; i++) {
+      operadores[i].onclick = (ev) => {
+        simbolos(ev.target.value);
+      }
+    }
+  }
+}
+
+
 //-- Ha llegado un dígito
 function number(num)
 {
   //-- Segun el listAhacemos una cosa u otra
   if (listA== LISTA.INIT) {
-    display.innerHTML = num;
+    calculo.innerHTML = num;
     listA= LISTA.OP1;
   }else if (listA== LISTA.OP1){
-    display.innerHTML += num;
+    calculo.innerHTML += num;
   } else if (listA== LISTA.OPERATION) {
-    display.innerHTML += num;
+    calculo.innerHTML += num;
     listA= LISTA.OP2_INIT;
   }else if (listA== LISTA.OP2_INIT) {
-    display.innerHTML +=  num;
+    calculo.innerHTML +=  num;
     listA= LISTA.OP2;
   }else if (listA== LISTA.OP2){
-    display.innerHTML += num;
+    calculo.innerHTML += num;
   }
 }
 
 function simbolos(oper){
   if (listA!= LISTA.OPERATION) {
-    display.innerHTML += oper;
+    calculo.innerHTML += oper;
     listA= LISTA.OPERATION;
   }
 }
@@ -127,23 +152,7 @@ eliminar.onclick = (ev)=>{
   if (listA.length == 0) listA.push(0);
   calculo.innerHTML = ((listA.toString()).replace(/,/g, ""));//solucionamos el problema al escribir desde el array
 }
-/*Escribe los botones*/
-function botones(boton){
-  if (calculo.innerHTML == 0 ){
-    listA = [];
-    listA.push(boton);
-    calculo.innerHTML = listA;
-  }else {
-    if (listA.length == numerosporlinea) //memoria de 18 caracteres ,
-                                        //podemos cambiarla poniendo en csss
-                                        //un tamaño inferior.
-      return;
-    else {
-      listA.push(boton);
-      calculo.innerHTML = ((listA.toString()).replace(/,/g, "")); //solucionamos el problema al escribir desde el array
-    }
-  }
-}
+
 /*Calculamos la operacion y la almecenamos en un historial de 4 operaciones*/
 igual.onclick = (ev) =>{
   var cadena = [];
