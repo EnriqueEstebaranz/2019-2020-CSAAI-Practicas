@@ -62,7 +62,7 @@ let operacion = "";
 let solucion = 0;
 var numerosporlinea = 28;
 var n = 0;
-const maxlineashistorial = 3;
+const maxlineashistorial = 4;
 var LISTA= {
   INIT: 0,
   OP1: 1,
@@ -75,11 +75,11 @@ let listA= LISTA.INIT;
 
 /*Pulsando el boton clear limpia toda la pantalla y la restablece al valor de inicio*/
 clear.onclick = (ev) =>{
-
-  operacion = "0";
+  operacion = "";
   solucion = "";
-  calculo.innerHTML = "0";
+  calculo.innerHTML = "";
   historial.innerHTML = "";
+  n = 0;
 }
 
 /*Escribe los botones*/
@@ -88,24 +88,28 @@ function botones(boton){
   for (i=0; i<numeros.length; i++) {
     numeros[i].onclick = (ev) => {
       if ((calculo.innerHTML.length) >= numerosporlinea) {
+        console.log("Limite de numeros por pantalla logrado");
         return;
       }else{
+        console.log(calculo.innerHTML.length);
         number(ev.target.value);
+        console.log(calculo.innerHTML.length);
       }
     }
   }
   for (i=0; i<operadores.length; i++) {
     operadores[i].onclick = (ev) => {
       if ((calculo.innerHTML.length) >= numerosporlinea) {
+        console.log("Limite de numeros por pantalla logrado");
         return;
       }else{
+        console.log(calculo.innerHTML.length);
         operaciones(ev.target.value);
+        console.log(calculo.innerHTML.length);
       }
     }
   }
 }
-
-
 
 //-- Ha llegado un dígito
 function number(num)
@@ -137,31 +141,37 @@ function operaciones(oper){
 /*Introduce el ultimo resultado obtenido*/
 function anterioresultado(){
 
-  ultimasolucion = solucion.toString().replace(/,/g, "");//solucionamos el problema al escribir desde el array
-    if((solucion.length + listA.length) > numerosporlinea){ //Basicamente evitamos que se escriba mas de la cuenta.
+  ultimasolucion = solucion
+    if((solucion.length + calculo.innerHTML.length) > numerosporlinea){ //Basicamente evitamos que se escriba mas de la cuenta.
+      console.log("El resultado anterior se saldria de la pantalla")
       return;
     }
     else if (listA.length == 1 && listA[0]==0){
       listA.shift();
     }
-  listA = listA.concat(ultimasolucion);//Introducimos el anterior valor al array mediante concat
-  calculo.innerHTML = listA;
+  calculo.innerHTML = calculo.innerHTML.concat(ultimasolucion);//Introducimos el anterior valor al array mediante concat
+
 }
 /*Elimina el digito mas reciente*/
+
 eliminar.onclick = (ev)=>{
-  listA.pop(); //Elimina el ultimo digito implementado al array.
-  if (listA.length == 0) listA.push(0);
-  calculo.innerHTML = ((listA.toString()).replace(/,/g, ""));//solucionamos el problema al escribir desde el array
+  if((calculo.innerHTML.length) == 0) {
+    console.log("Ya se ha borrado todo");
+    return;
+  }else{
+    calculo.innerHTML = calculo.innerHTML.slice(0,-1);
+  }
 }
 
 /*Calculamos la operacion y la almecenamos en un historial de 4 operaciones*/
 igual.onclick = (ev) =>{
   var cadena = [];
-  operacion = listA.toString().replace(/,/g, "");
+  operacion = calculo.innerHTML;
   solucion = Number((eval(operacion)).toFixed(3))// nos permite resultado de hasta 3 digitos
   if(n < maxlineashistorial){
     historial.innerHTML += operacion + " = " + solucion + "<br>";
-    listA[n] = operacion + " = " + solucion + "<br>";
+    cadena[n] = operacion + " = " + solucion + "<br>";
+    console.log(listA[n])
     n = n + 1;
   }else{
     for(i = 0; i < maxlineashistorial; i++){
@@ -176,8 +186,6 @@ igual.onclick = (ev) =>{
       historial.innerHTML += listA[i]
     }
   }
-  listA = [];
-  listA.push(0);
-  calculo.innerHTML = 0; //reestablecemos la pantalla y su valor
+  calculo.innerHTML = ""; //reestablecemos la pantalla y su valor
   operacion = solucion;
 }
