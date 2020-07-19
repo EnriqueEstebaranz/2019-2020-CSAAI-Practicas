@@ -103,7 +103,10 @@ function botones(boton){
       if ((calculo.innerHTML.length) >= numerosporlinea) {
         console.log("Limite de numeros por pantalla logrado");
         return;
-      }else{
+      }else if((calculo.innerHTML.length) == 0 ){
+        console.log("Antes debes poner un numero");
+        return;
+      }else {
         console.log(calculo.innerHTML.length);
         operaciones(ev.target.value);
         console.log(calculo.innerHTML.length);
