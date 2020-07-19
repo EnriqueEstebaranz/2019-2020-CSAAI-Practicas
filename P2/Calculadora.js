@@ -32,6 +32,27 @@ console.log("Ejecutando JS...");
   /* Simbolo igual de la Calculadora*/
   const igual = document.getElementById('igual');
 
+  //-- Estados de la calculadora
+  const ESTADO = {
+    INIT: 0,
+    OP1: 1,
+    OPERATION: 2,
+    OP2_INIT: 3,
+    OP2: 4,
+  }
+
+  //-- Ha llegado un dígito
+  function number(num)
+  {
+    //-- Segun el estado hacemos una cosa u otra
+    if (estado == ESTADO.INIT) {
+      display.innerHTML = num;
+      estado = ESTADO.OP1;
+    }
+    // .......... Resto del código
+  }
+
+
   suma.onclick = function () {botones("+")};
   resta.onclick = function () {botones("-")};
   multiplicacion.onclick = function () {botones("*")};
