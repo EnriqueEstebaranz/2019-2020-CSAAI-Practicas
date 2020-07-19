@@ -33,24 +33,8 @@ console.log("Ejecutando JS...");
   const igual = document.getElementById('igual');
 
   //-- Estados de la calculadora
-  const ESTADO = {
-    INIT: 0,
-    OP1: 1,
-    OPERATION: 2,
-    OP2_INIT: 3,
-    OP2: 4,
-  }
 
-  //-- Ha llegado un dígito
-  function number(num)
-  {
-    //-- Segun el estado hacemos una cosa u otra
-    if (estado == ESTADO.INIT) {
-      display.innerHTML = num;
-      estado = ESTADO.OP1;
-    }
-    // .......... Resto del código
-  }
+
 
 
   suma.onclick = function () {botones("+")};
@@ -72,22 +56,58 @@ console.log("Ejecutando JS...");
   answer.onclick = function () {anterioresultado()}
 
 /*Instrucciones*/
-let listA = [];
+
 let operacion = "";
 let solucion = 0;
 var numerosporlinea = 28;
 var n = 0;
 const maxlineashistorial = 3;
+var LISTA= {
+  INIT: 0,
+  OP1: 1,
+  OPERATION: 2,
+  OP2_INIT: 3,
+  OP2: 4,
+};
+
+let listA= LISTA.INIT;
 
 /*Pulsando el boton clear limpia toda la pantalla y la restablece al valor de inicio*/
 clear.onclick = (ev) =>{
-  listA = [];
-  listA.push(0);
+
   operacion = "0";
   solucion = "";
   calculo.innerHTML = "0";
   historial.innerHTML = "";
 }
+
+//-- Ha llegado un dígito
+function number(num)
+{
+  //-- Segun el listAhacemos una cosa u otra
+  if (listA== LISTA.INIT) {
+    display.innerHTML = num;
+    listA= LISTA.OP1;
+  }else if (listA== LISTA.OP1){
+    display.innerHTML += num;
+  } else if (listA== LISTA.OPERATION) {
+    display.innerHTML += num;
+    listA= LISTA.OP2_INIT;
+  }else if (listA== LISTA.OP2_INIT) {
+    display.innerHTML +=  num;
+    listA= LISTA.OP2;
+  }else if (listA== LISTA.OP2){
+    display.innerHTML += num;
+  }
+}
+
+function simbolos(oper){
+  if (listA!= LISTA.OPERATION) {
+    display.innerHTML += oper;
+    listA= LISTA.OPERATION;
+  }
+}
+
 /*Introduce el ultimo resultado obtenido*/
 function anterioresultado(){
 
