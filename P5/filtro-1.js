@@ -69,11 +69,16 @@ deslizador.oninput = () => {
 
   //-- Obtener el umbral de rojo del desliador
   umbral = deslizador.value
-
+  umbralverde = deslizadorverde.value
+  umbralazul = deslizadorazul.value
   //-- Filtrar la imagen según el nuevo umbral
   for (let i = 0; i < data.length; i+=4) {
     if (data[i] > umbral)
       data[i] = umbral;
+    if (data[i+1] > umbralazul)
+        data[i+1] = umbralazul;
+    if (data[i+2] > umbralverde)
+        data[i+2] = umbralverde;
   }
 
   //-- Poner la imagen modificada en el canvas
@@ -93,12 +98,18 @@ deslizadorverde.oninput = () => {
   let data = imgDataverde.data
 
   //-- Obtener el umbral de rojo del desliador
+  umbral = deslizador.value
   umbralverde = deslizadorverde.value
+  umbralazul = deslizadorazul.value
 
   //-- Filtrar la imagen según el nuevo umbral
   for (let i = 0; i < data.length; i+=4) {
-    if (data[i+1] > umbralverde) // es donde se encuentra el color verde, para el azul sera +2
-      data[i+1] = umbralverde;
+    if (data[i] > umbral)
+      data[i] = umbral;
+    if (data[i+1] > umbralazul)
+        data[i+1] = umbralazul;
+    if (data[i+2] > umbralverde)
+        data[i+2] = umbralverde;
   }
 
   //-- Poner la imagen modificada en el canvas
@@ -119,12 +130,18 @@ deslizadorazul.oninput = () => {
   let data = imgDataazul.data
 
   //-- Obtener el umbral de rojo del desliador
+  umbral = deslizador.value
+  umbralverde = deslizadorverde.value
   umbralazul = deslizadorazul.value
 
   //-- Filtrar la imagen según el nuevo umbral
   for (let i = 0; i < data.length; i+=4) {
-    if (data[i+2] > umbralazul)
-      data[i+2] = umbralazul;
+    if (data[i] > umbral)
+      data[i] = umbral;
+    if (data[i+1] > umbralazul)
+        data[i+1] = umbralazul;
+    if (data[i+2] > umbralverde)
+        data[i+2] = umbralverde;
   }
 
   //-- Poner la imagen modificada en el canvas

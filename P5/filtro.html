@@ -7,16 +7,24 @@
     <script src="filtro-1.js" defer></script>
   </head>
   <body>
+    <div class="titulo">
+      FILTRO
+    </div>
     <canvas id="canvas"></canvas>
-    <img src="prueba.png" id="imagesrc">
-    <p>Establece el umbral de rojo:</p>
-    <input type="range" id="deslizador" min="0" max="255" value="255"/>
-    <p id="range_value">00</p>
-    <p>Establece el umbral de verde:</p>
-    <input type="range" id="deslizadorverde" min="0" max="255" value="255"/>
-    <p id="range_valueverde">00</p>
-    <p>Establece el umbral de azul:</p>
-    <input type="range" id="deslizadorazul" min="0" max="255" value="255"/>
-    <p id="range_valueazul">00</p>
+    <img src="wesw3.png" id="imagesrc">
+    <div class="panel_control">
+      <div class="rgb">
+        <p>Establece el umbral de rojo:</p>
+        <input type="range" id="deslizador" min="0" max="255" value="255"/>
+        <p id="range_value">00</p>
+        <p>Establece el umbral de verde:</p>
+        <input type="range" id="deslizadorverde" min="0" max="255" value="255"/>
+        <p id="range_valueverde">00</p>
+        <p>Establece el umbral de azul:</p>
+        <input type="range" id="deslizadorazul" min="0" max="255" value="255"/>
+        <p id="range_valueazul">00</p>
+      </div>
+      <button class ="boton" id ="grises"  type="button" >GRISES</button>
+    </div>
   </body>
 </html>
