@@ -1,4 +1,5 @@
 console.log("Ejecutando JS...");
+console.log("Pulse cualquier letra para comenzar")
 
 /* Constantes de la pantalla*/
   const calculo = document.getElementById('calculo');
@@ -92,7 +93,6 @@ function botones(boton){
         console.log("Limite de numeros por pantalla logrado");
         return;
       }else{
-        console.log(calculo.innerHTML.length);
         number(ev.target.value);
         console.log(calculo.innerHTML.length);
       }
