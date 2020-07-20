@@ -15,7 +15,7 @@ console.log("Ejecutando JS...");
   const division = document.getElementById('division');
   const suma = document.getElementById('suma');
   const resta = document.getElementById('resta')
-  const exponencial = document.getElementById('exponencial');
+  const potencia = document.getElementById('potencia');
   /* Numeros de la Calculadora*/
   const num0 = document.getElementById('num0');
   const num1 = document.getElementById('num1');
@@ -42,7 +42,7 @@ console.log("Ejecutando JS...");
   multiplicacion.onclick = function () {botones("*")};
   division.onclick = function () {botones("/")};
   punto.onclick = function () {botones(".")};
-  exponencial.onclick = function () {botones("e")};
+  potencia.onclick = function () {botones("^")};
   num0.onclick = function () {botones(0)};
   num1.onclick = function () {botones(1)};
   num2.onclick = function () {botones(2)};
