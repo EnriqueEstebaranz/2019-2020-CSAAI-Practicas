@@ -5,6 +5,8 @@ const canvas = document.getElementById('canvas');
 const img = document.getElementById('imagesrc');
 const ctx = canvas.getContext('2d');
 
+//-- Botones
+grises = document.getElementById('grises');
 //-- Acceso al deslizador
 const deslizador = document.getElementById('deslizador');
 const deslizadorverde = document.getElementById('deslizadorverde');
@@ -31,6 +33,24 @@ img.onload = function () {
   console.log("Imagen lista...");
 };
 
+grises.onclick=()=>{
+  //-- Obtener la imagen del canvas en pixeles
+  var imgDatagris = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  //-- Obtener el array con todos los píxeles
+  var data = imgDatagris.data;
+
+  for (var i = 0; i < data.length; i+=4) {
+      rojo = data[i];
+      verde = data[i+1];
+      azul = data[i+2];
+      brillo = (3 * rojo + 4 * verde + azul)/8;1
+      data[i] = brillo;
+      data[i+1] = brillo;
+      data[i+2] = brillo;
+  }
+  //-- Poner la imagen modificada en el canvas
+  ctx.putImageData(imgDatagris, 0, 0);
+}
 
 //-- Funcion de retrollamada del deslizador
 deslizador.oninput = () => {
