@@ -84,31 +84,31 @@ deslizadorverde.oninput = () => {
   //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgDataverde, 0, 0);
 }
-deslizador.oninput = () => {
+deslizadorazul.oninput = () => {
   //-- Mostrar el nuevo valor del deslizador
-  range_value.innerHTML = deslizador.value;
+  range_valueazul.innerHTML = deslizadorazul.value;
 
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
   ctx.drawImage(img, 0,0);
 
   //-- Obtener la imagen del canvas en pixeles
-  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  let imgDataazul = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
   //-- Obtener el array con todos los píxeles
-  let data = imgData.data
+  let data = imgDataazul.data
 
   //-- Obtener el umbral de rojo del desliador
-  umbral = deslizador.value
+  umbralazul = deslizadorazul.value
 
   //-- Filtrar la imagen según el nuevo umbral
   for (let i = 0; i < data.length; i+=4) {
-    if (data[i] > umbral)
-      data[i] = umbral;
+    if (data[i+2] > umbralazul)
+      data[i+2] = umbralazul;
   }
 
   //-- Poner la imagen modificada en el canvas
-  ctx.putImageData(imgData, 0, 0);
+  ctx.putImageData(imgDataazul, 0, 0);
 }
 
 console.log("Fin...");
