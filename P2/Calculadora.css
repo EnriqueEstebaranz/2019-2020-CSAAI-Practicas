@@ -4,6 +4,14 @@
   font-family:courier,arial,helvética;
 }
 
+#frase{
+
+  text-align: center;
+  font-size: 50px;
+  font-family:"Courier New";
+  position:absolute;
+}
+
 .titulo {
 
   margin-left: 450px;
@@ -15,7 +23,6 @@
   font-family:"Courier New";
   position:absolute;
   margin-right:  10px;
-
 }
 
 .gif1{
@@ -122,7 +129,7 @@ button:active{
   border-color: #6325F2;
 }
 body {
-  background-image: url("fondo2.jpg");
+  background-image: url("fondito.jpg");
   background-size: cover;
   background-attachment: fixed;
 }
