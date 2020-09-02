@@ -1,3 +1,15 @@
+
+.titulo {
+  position:absolute;
+  right:50%;
+  transform: translate(+50%);
+  color:#E603AE;
+  font-size: 70px;
+  font-family:"Courier New";
+  margin-top: 0px;
+
+}
+
 button{
   text-align: center;
   width: 155px;
@@ -23,9 +35,12 @@ button:active{
 }
 
 .todo{
+  position:absolute;
+  right:50%;
+  transform: translate(+50%);
   background-color: #68365D;
   width: 600px;
-  margin: 0 auto;
+  margin-top: 240px;
   padding-top: 0.1px;
   padding-bottom: 20px;
   border: #BA068E solid;
@@ -66,6 +81,7 @@ video{
 }
 
 body {
+  zoom:75%;
   background-image: url("fondo.jpg");
   background-size: cover;
   background-attachment: fixed;
