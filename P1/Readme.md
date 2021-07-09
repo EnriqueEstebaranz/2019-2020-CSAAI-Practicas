@@ -5,4 +5,4 @@ Este es mi curricumul , elegi como tema hablar sobre Miquel montoro :
 -he creado un boton para practicar y enlazar un un video.
 y añadido un "anuncio" como detalle y darle un toque mas realista
 
-https://enriqueestebaranz.github.io/2019-2020-CSAAI-Practicas/P1/curriculum/
+https://enriqueestebaranz.github.io/2019-2020-CSAAI-Practicas/P1/curriculum/cv.html
